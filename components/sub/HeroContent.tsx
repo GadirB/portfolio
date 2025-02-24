@@ -11,6 +11,13 @@ import { SparklesIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 
 const HeroContent = () => {
+  const scrollToProjects = () => {
+    const projectSection = document.getElementById('projects');
+    if (projectSection) {
+      projectSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <motion.div
       initial="hidden"
@@ -49,12 +56,13 @@ const HeroContent = () => {
           I&apos;m a Full Stack Software Engineer with experience in Website,
           Mobile, and Software development. Check out my projects and skills.
         </motion.p>
-        <motion.a
+        <motion.button
+          onClick={scrollToProjects}
           variants={slideInFromLeft(1)}
           className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
         >
           Learn More!
-        </motion.a>
+        </motion.button>
       </div>
 
       <motion.div
